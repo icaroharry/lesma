@@ -1,0 +1,18 @@
+{
+  "name": "speed",
+  "version": "0.0.1",
+  "description": "App pra notificar sua companhia de internet se sua velocidade está abaixo do limite.",
+  "author": "Ícaro Harry",
+  "main": "app.js",
+  "License": "MIT",
+  "dependencies": {
+    "prompt": "^1.0.0",
+    "speedtest-net": "~1.2.5",
+    "twitter-pin-auth": "*",
+    "webkit-opener": "^0.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nebulab-io/Kawhi-.git"
+  }
+}
