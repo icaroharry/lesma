@@ -1,16 +1,19 @@
 var Twitter = require('twitter');
-var config = require('./config');
+var config = require('./../config');
+var twitterPin = require('./twitter-pin');
+
+var client = {};
 
 if(config.accessTokenKey && config.accessTokenSecret) {
-  var client = new Twitter({
+  client = new Twitter({
     consumer_key: config.consumerKey,
     consumer_secret: config.consumerSecret,
     access_token_key: config.accessTokenKey,
     access_token_secret: config.accessTokenSecret
   });
 } else {
-  auth.getAuth(function(authData) {
-    var client = new Twitter({
+  twitterPin.getAuth(function(authData) {
+    client = new Twitter({
       consumer_key: config.consumerKey,
       consumer_secret: config.consumerSecret,
       access_token_key: authData.accessTokenKey,
@@ -18,3 +21,5 @@ if(config.accessTokenKey && config.accessTokenSecret) {
     });
   });
 }
+
+module.exports = client;

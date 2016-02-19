@@ -8,6 +8,7 @@
   "dependencies": {
     "prompt": "^1.0.0",
     "speedtest-net": "~1.2.5",
+    "twitter": "^1.2.5",
     "twitter-pin-auth": "*",
     "webkit-opener": "^0.1.2"
   },
