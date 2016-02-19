@@ -8,6 +8,9 @@ var fs = require('fs');
 var twitterPinAuth = new TwitterPinAuth(config.consumerKey, config.consumerSecret);
 
 exports.getAuth = function(callback) {
+  console.log('Para prosseguir você deve fazer login no twitter.');
+  console.log('Uma nova tab será aberta no seu navegador padrão...');
+
   twitterPinAuth.requestAuthUrl()
     .then(function(url) {
       webkitOpener(url);
@@ -18,6 +21,7 @@ exports.getAuth = function(callback) {
   prompt.start();
 
   console.log('Insira o PIN recebido no site do Twitter');
+  console.log('Não se preocupe, só iremos postar uma mensagem \npara a sua operadora de internet...');
   prompt.get(['pin'], function(err, result) {
     twitterPinAuth.authorize(result.pin)
       .then(function(authData) {
